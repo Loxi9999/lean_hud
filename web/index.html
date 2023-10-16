@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.1.1/css/pro.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hud</title>
+</head>
+<body>
+    <div class="MainHud">
+        <i class="fa-light fa-heart" id="Health"></i>
+        <i class="fa-light fa-shield" id="Armor"></i>
+        <i class="fa-light fa-burger" id="Hunger"></i>
+        <i class="fa-light fa-droplet" id="Thirst"></i>
+        <i class="fa-light fa-lungs" id="Oxygen"></i>
+        <i class="fa-light fa-microphone" id="Mic"></i>
+    </div>
+    <div class="CarHud">
+        <div class="CarHudTop">
+            <div class="CarHudBox" style="justify-content: center; gap: 3px;">
+                <div class="Speed" id="Speed">134</div>
+                <div class="Unit">km/h</div>
+            </div>
+            <div class="CarHudBox">
+                <i class="fa-solid fa-seat-airline" id="Belt"></i>
+                <i class="fa-solid fa-gas-pump" style="color: var(--maincolor);"></i>
+                <div class="FuelBar">
+                    <div class="FuelFill"></div>
+                </div>
+            </div>
+        </div>
+        <div class="CarHudBox" id="StreetBox">
+            <div id="Direction">N</div>
+            <div>
+                <div style="display: flex; flex-direction: column; font-size: 15px; margin-left: 1.5vh;">
+                    <span id="Street">Wschodnie Vinewood</span>
+                    <span id="Zone">Murzynkowo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Other">
+        <div class="WaterMark">
+            <div class="MarkLeft">
+                <div>ID<div class="ID">12</div></div>
+                <div>UID<div class="UID">12</div></div>
+                <span style="font-size: 14px; color: rgba(217, 217, 217, 0.806);">discord.gg/leangg</span>
+            </div>
+            <div class="MarkRight">
+                <div class="Logo"></div>
+                <span>LeanGG</span>
+                <span style="font-size: 15px; color: rgba(217, 217, 217, 0.806); line-height: 1vh;">WL:OFF</span>
+            </div>
+        </div>
+        <div class="WeaponHud">
+            <div class="WeaponInfo">
+                <div id="Ammo">14</div>
+                <div id="Magazine">30</div>
+            </div>
+            <div class="WeaponImg"></div>
+        </div>
+        <div class="NotifyList">
+            <!-- <div class="Notify">
+                <i class="fa-solid fa-bell"></i>
+                <div>
+                    <span style="font-size: 1.5vh;">Powiadomienie</span>
+                    <span>Odzyskujesz siłę</span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="Settings">
+        <div class="Title">USTAWIENIA HUDU</div>
+        <div class="Options">
+            <div class="OptionBox" style="height: 14vh;">
+                <span>Zmiana Koloru</span>
+                <div class="Line"></div>
+                <div class="OptionContent" style="justify-content: space-evenly;">
+                    <div class="Change">
+                        <div>
+                            <i class="fa-light fa-heart" id="Health"></i>
+                            <input type="color" id="HealthColor" value="#911a91">
+                        </div>
+                        <div>
+                            <i class="fa-light fa-shield" id="Armor"></i>
+                            <input type="color" id="ArmorColor" value="#911a91">
+                        </div>
+                        <div>
+                            <i class="fa-light fa-burger" id="Hunger"></i>
+                            <input type="color" id="HungerColor" value="#911a91">
+                        </div>
+                    </div>
+                    <div class="Line"></div>
+                    <div class="Change">
+                        <div>
+                            <i class="fa-light fa-droplet" id="Thirst"></i>
+                            <input type="color" id="ThirstColor" value="#911a91">
+                        </div>
+                        <div>
+                            <i class="fa-light fa-lungs" id="Oxygen"></i>
+                            <input type="color" id="OxygenColor" value="#911a91">
+                        </div>
+                        <div>
+                            <i class="fa-light fa-microphone" id="Mic"></i>
+                            <input type="color" id="MicColor" value="#911a91">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="OptionBox">
+                <span>Skala</span>
+                <div class="Line"></div>
+                <div class="OptionContent">
+                    <input type="range" id="Scale" min="65" value="100" max="100">
+                </div>
+            </div>
+            <div class="OptionBox">
+                <span>Cinema Mode</span>
+                <div class="Line"></div>
+                <div class="OptionContent">
+                    <div class="HudBtn" id="CinemaBtn" onclick="SwitchCinema()">WYŁ</div>
+                    <input type="range" id="Cinema" min="10" max="50">
+                </div>
+            </div>
+            <div class="OptionBox">
+                <span>Optymalizacja</span>
+                <div class="Line"></div>
+                <div class="OptionContent">
+                    <div id="StandardBtn" class="HudBtn activeBtn" onclick="SwitchOpti('Standard')">STANDARDOWA</div>
+                    <div id="BetterBtn" class="HudBtn" onclick="SwitchOpti('Better')">WIĘKSZA (OPÓŹNIENIA)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="CinemaMode">
+        <div class="Cinema" id="CinemaTop"></div>
+        <div class="Cinema" id="CinemaBot"></div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
